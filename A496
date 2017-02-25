@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+
+int main()
+{
+	std::ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	
+	int n;
+	cin>>n;
+	vector<int> v(n);
+	for(int i=0;i<n;i++)
+		cin>>v[i];
+	int mini=1500;
+	int maxi =0;
+	for(int i=1;i<n-1;i++)
+	{
+		maxi =0;
+		for(int j=0;j<n-1;j++)
+		{
+			if(i==j+1)
+			{
+				maxi = max(maxi,v[j+2]-v[j]);
+			}
+			else
+				maxi = max(maxi,v[j+1]-v[j]);
+		}
+		mini = min(maxi,mini);
+	}
+	cout<<mini<<endl;
+	
+	}
