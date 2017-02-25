@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+
+int main()
+{
+	ifstream fin("input.txt");
+	ofstream fout("output.txt");
+	std::ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	
+	int n,m;
+	string s;
+	fin>>n>>m;
+	if(n==m)
+	{
+		while(n--)
+		{
+			s.append("G");
+			s.append("B");
+		}
+	}
+		else if(n>m)
+		{
+			s.append("B");
+			n--;
+			while(m--)
+			{
+				s.append("G");
+				s.append("B");
+				n--;
+			}
+			while(n--)
+				s.append("B");
+		}
+		else
+		{
+			s.append("G");
+			m--;
+			while(n--)
+			{
+				s.append("B");
+				s.append("G");
+				m--;
+			}
+			while(m--)
+				s.append("G");
+		}
+		fout<<s<<endl;
+	
+	
+	}
