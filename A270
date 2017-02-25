@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+
+int main()
+{
+	std::ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int a;
+		cin>>a;
+		float b = 360;
+		float c = 180-a;
+		float n = b/c;
+		//cout<<n<<endl;
+		//int m =n;
+		if(n==floor(n))
+			cout<<"YES"<<endl;
+		else
+			cout<<"NO"<<endl;
+	}
+	
+	
+	}
