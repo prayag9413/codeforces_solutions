@@ -1,0 +1,35 @@
+#include <iostream>
+#include<vector>
+#include<map>
+#define ll long long
+using namespace std;
+
+int main()
+{
+    ll int n,k,val;
+	cin>>n>>k;
+	map<ll int,int>m;
+	vector<ll int>v;
+	while(n--)
+	{
+		cin>>val;
+		m[val]=1;
+	}
+	ll int sum=0,ans = 0,l=1;
+	while(true)
+	{
+		if(sum+l>k)
+			break;
+		if(m[l]==0)
+			{
+			    sum+=l;
+			    ans++;
+			    v.push_back(l);
+
+			}
+        l++;
+	}
+	cout<<ans<<endl;
+	for(n=0;n<v.size();n++)
+        cout<<v[n]<<" ";
+}
